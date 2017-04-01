@@ -51,6 +51,6 @@ htmlwidgets::saveWidget(x, "GOOGL plotly logit temp k54.html")
 ##########################################################################
 
 # force origin
-google_plot <- ggplot(data=post2015) + geom_point(aes(date,close),color=post2015$close) + geom_point(aes(date,pred),color=post2015$pred) +
+google_plot <- google_plot +
   expand_limits(y= 0) + scale_y_continuous(expand = c(0, 0))
 google_plot
