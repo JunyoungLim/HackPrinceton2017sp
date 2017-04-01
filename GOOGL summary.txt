@@ -1,0 +1,32 @@
+     ticker          year          month             day       
+ GOOGL  :3177   Min.   :2004   Min.   : 1.000   Min.   : 1.00  
+ A      :   0   1st Qu.:2007   1st Qu.: 3.000   1st Qu.: 8.00  
+ AA     :   0   Median :2010   Median : 7.000   Median :16.00  
+ AAL    :   0   Mean   :2010   Mean   : 6.571   Mean   :15.75  
+ AAMC   :   0   3rd Qu.:2014   3rd Qu.:10.000   3rd Qu.:23.00  
+ AAN    :   0   Max.   :2017   Max.   :12.000   Max.   :31.00  
+ (Other):   0                                                  
+      open              high             low              close       
+ Min.   :  99.09   Min.   : 101.7   Min.   :  95.96   Min.   : 100.0  
+ 1st Qu.: 447.74   1st Qu.: 453.6   1st Qu.: 442.43   1st Qu.: 446.7  
+ Median : 550.76   Median : 556.7   Median : 545.16   Median : 550.1  
+ Mean   : 564.83   Mean   : 570.1   Mean   : 558.98   Mean   : 564.6  
+ 3rd Qu.: 678.31   3rd Qu.: 684.9   3rd Qu.: 672.00   3rd Qu.: 678.6  
+ Max.   :1226.80   Max.   :1228.9   Max.   :1218.60   Max.   :1220.2  
+                                                                      
+     volume          ex.dividend        split_ratio    adj_open    
+ Min.   :  521141   Min.   :  0.0000   Min.   :1    Min.   : 49.7  
+ 1st Qu.: 3070900   1st Qu.:  0.0000   1st Qu.:1    1st Qu.:224.6  
+ Median : 5519800   Median :  0.0000   Median :1    Median :290.9  
+ Mean   : 8292573   Mean   :  0.1788   Mean   :1    Mean   :362.9  
+ 3rd Qu.:10982000   3rd Qu.:  0.0000   3rd Qu.:1    3rd Qu.:532.1  
+ Max.   :82151100   Max.   :567.9717   Max.   :1    Max.   :873.7  
+                                                                   
+    adj_high         adj_low         adj_close        adj_volume      
+ Min.   : 51.03   Min.   : 48.13   Min.   : 50.16   Min.   :  521141  
+ 1st Qu.:227.49   1st Qu.:221.90   1st Qu.:224.05   1st Qu.: 3070900  
+ Median :293.66   Median :288.24   Median :291.05   Median : 5519800  
+ Mean   :366.14   Mean   :359.22   Mean   :362.71   Mean   : 8292573  
+ 3rd Qu.:536.75   3rd Qu.:527.17   3rd Qu.:532.30   3rd Qu.:10982000  
+ Max.   :874.42   Max.   :868.37   Max.   :872.37   Max.   :82151100  
+                                                                      

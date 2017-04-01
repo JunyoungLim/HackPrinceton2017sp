@@ -1,0 +1,32 @@
+     ticker              year          month             day       
+ KO     :   13909   Min.   :1962   Min.   : 1.000   Min.   : 1.00  
+ ARNC   :   13908   1st Qu.:1999   1st Qu.: 4.000   1st Qu.: 8.00  
+ BA     :   13908   Median :2006   Median : 7.000   Median :16.00  
+ CAT    :   13908   Mean   :2004   Mean   : 6.538   Mean   :15.75  
+ DD     :   13908   3rd Qu.:2012   3rd Qu.:10.000   3rd Qu.:23.00  
+ GE     :   13908   Max.   :2017   Max.   :12.000   Max.   :31.00  
+ (Other):14649314                                                  
+      open                high                low                close          
+ Min.   :     0.00   Min.   :     0.00   Min.   :     0.00   Min.   :     0.00  
+ 1st Qu.:    11.88   1st Qu.:    12.08   1st Qu.:    11.63   1st Qu.:    11.88  
+ Median :    23.00   Median :    23.37   Median :    22.65   Median :    23.00  
+ Mean   :    72.56   Mean   :    73.52   Mean   :    72.10   Mean   :    72.84  
+ 3rd Qu.:    38.75   3rd Qu.:    39.25   3rd Qu.:    38.21   3rd Qu.:    38.75  
+ Max.   :266390.00   Max.   :266445.00   Max.   :263260.50   Max.   :266013.00  
+ NA's   :1183        NA's   :513         NA's   :511         NA's   :240        
+     volume           ex.dividend       split_ratio          adj_open       
+ Min.   :0.000e+00   Min.   :  0.000   Min.   : 0.00175   Min.   :     0.0  
+ 1st Qu.:3.579e+04   1st Qu.:  0.000   1st Qu.: 1.00000   1st Qu.:     6.2  
+ Median :1.772e+05   Median :  0.000   Median : 1.00000   Median :    13.7  
+ Mean   :1.196e+06   Mean   :  0.002   Mean   : 1.00020   Mean   :   102.2  
+ 3rd Qu.:6.888e+05   3rd Qu.:  0.000   3rd Qu.: 1.00000   3rd Qu.:    27.3  
+ Max.   :6.675e+09   Max.   :567.972   Max.   :50.00000   Max.   :870240.0  
+ NA's   :56          NA's   :78        NA's   :161        NA's   :1183      
+    adj_high           adj_low           adj_close          adj_volume       
+ Min.   :     0.0   Min.   :     0.0   Min.   :     0.0   Min.   :0.000e+00  
+ 1st Qu.:     6.3   1st Qu.:     6.1   1st Qu.:     6.2   1st Qu.:4.490e+04  
+ Median :    13.9   Median :    13.4   Median :    13.7   Median :2.266e+05  
+ Mean   :   104.3   Mean   :   100.6   Mean   :   102.4   Mean   :1.425e+06  
+ 3rd Qu.:    27.7   3rd Qu.:    26.9   3rd Qu.:    27.3   3rd Qu.:8.967e+05  
+ Max.   :923280.0   Max.   :854520.0   Max.   :878520.0   Max.   :2.304e+09  
+ NA's   :513        NA's   :511        NA's   :240        NA's   :63         
