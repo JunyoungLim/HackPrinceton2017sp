@@ -22,6 +22,7 @@ for (k in c(30:200)) {
 
 print(best_k)
 # 112
+# 0.04047014
 
 # best difference prediction
 best_rsmle <- 100000
@@ -57,3 +58,4 @@ for (k in c(30:200)) {
 
 print(best_k)
 # 54
+# rsmle = 1.010991

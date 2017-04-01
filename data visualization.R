@@ -15,9 +15,9 @@ post2015$pred <- pred
 
 # ggplot
 google_plot <- ggplot(data=gglpost) + 
-               #geom_line(aes(date,open,color="open")) +
-               #geom_line(aes(date,high,color="high")) +
-               #geom_line(aes(date,low,color="low")) +
+               geom_line(aes(date,open,color="open")) +
+               geom_line(aes(date,high,color="high")) +
+               geom_line(aes(date,low,color="low")) +
                geom_line(aes(date,close,color="close")) +
                geom_line(aes(date,predicted,color="prediction")) +
                scale_colour_manual(name="Line Color",
@@ -29,7 +29,7 @@ google_plot <- ggplot(data=gglpost) +
                scale_x_datetime(date_labels="%m-%d-%y", date_breaks = "3 months")
 
 # design
-google_plot <- google_plot + ggtitle("GOOGL Stock Prediction 2016-17") +
+google_plot <- google_plot + ggtitle("GOOGL Stock Prediction 2016-17 k=54") +
                             ylab("stock prices") +
                             theme(plot.title = element_text(hjust = 0.5, size = 15),
                                   plot.background = element_rect(fill = "white"),
@@ -44,7 +44,7 @@ google_plot
 library(plotly)
 x <- ggplotly(google_plot)
 x
-htmlwidgets::saveWidget(x, "GOOGL plotly logit simp temp.html")
+htmlwidgets::saveWidget(x, "GOOGL plotly logit temp k54.html")
 
 
 
