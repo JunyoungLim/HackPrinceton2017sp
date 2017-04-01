@@ -12,6 +12,7 @@ data <- separate(data, monthday, c("month", "day"), sep="-", extra="merge")
 data$year <- as.numeric(data$year)
 data$month <- as.numeric(data$month)
 data$day <- as.numeric(data$day)
+data$date <- paste(data$year, data$month, data$day, sep="-")
 
 # resave the file
 write.csv(data, "stock.csv", row.names = FALSE)

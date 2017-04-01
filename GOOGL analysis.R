@@ -6,6 +6,8 @@ reg <- lm(close ~ year + month + day, data=pre2015)
 summary(reg)
 pred <- predict(reg, post2015)
 sqrt(mean((log(pred)-log(post2015$close))^2,na.rm=TRUE))
+mean(abs(pred-post2015$close))
+mean(post2015$close)
 
 ######################################################
 reg <- lm(close ~ year, data=pre2015)
