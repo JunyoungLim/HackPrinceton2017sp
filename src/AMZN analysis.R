@@ -65,7 +65,7 @@ sqrt(mean((log(post2015$predicted+1)-log(post2015$close+1))^2,na.rm=TRUE))
 ########################################################################
 
 #####
-post2015$predicted <- post2015$predicted4
+post2015$predicted <- post2015$predicted1
 #####
 
 # ggplot

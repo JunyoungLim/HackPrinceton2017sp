@@ -84,7 +84,7 @@ gg_plot <- ggplot(data=post2015) +
   scale_x_datetime(date_labels="%m-%d-%y", date_breaks = "3 months")
 
 # design
-gg_plot <- gg_plot + ggtitle("HON Stock Prediction 2016-17 Ensemble") +
+gg_plot <- gg_plot + ggtitle("HON Stock Prediction 2016-17") +
   ylab("stock prices") +
   theme(plot.title = element_text(hjust = 0.5, size = 15),
         plot.background = element_rect(fill = "white"),
