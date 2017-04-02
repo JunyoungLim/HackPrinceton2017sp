@@ -4,7 +4,7 @@ library(ggplot2)
 
 set.seed(42)
 
-train <- IBM[,-c(1,17)] # exclude row numbers and Id
+train <- GOOGL[,-c(1,17)] # exclude row numbers and Id
 
 rf <- randomForest(change ~ ., data=train)
 
