@@ -6,27 +6,67 @@ AMZN$date <- as.POSIXct(strptime(AMZN$date, '%Y-%m-%d',tz='GMT'))
 pre2015 <- subset(AMZN, year <= 2015)
 post2015 <- subset(AMZN, year > 2015)
 
+# linear
+lm <- lm(change ~ open + close + adj_close + adj_open,
+         data = pre2015)
+pred <- predict(lm, newdata = post2015, type="response")
+post2015$pred <- pred
+
+# 58 best
+# 67 diff
+cur_close <- post2015$close[1]
+post2015$predicted1 <- cur_close
+for (i in c(1:(nrow(post2015)-1))) {
+  cur_close <- cur_close * (1 + (post2015$pred[i]-0.5)/58);
+  post2015$predicted1[i+1] <- cur_close;
+}
+
+cur_close <- post2015$close[1]
+post2015$predicted2 <- cur_close
+for (i in c(1:(nrow(post2015)-1))) {
+  cur_close <- cur_close * (1 + (post2015$pred[i]-0.5)/67);
+  post2015$predicted2[i+1] <- cur_close;
+}
+
+sqrt(mean((log(post2015$predicted+1)-log(post2015$close+1))^2,na.rm=TRUE))
+
 # logit
-logit <- glm(change ~ date + open + close,
+logit <- glm(change ~ open + close + adj_open + adj_close,
              data = pre2015,
              family = binomial())
 
 pred <- predict(logit, newdata = post2015, type="response")
 post2015$pred <- pred
 
-# 48 for best 0.06071111
-# 62 for diff 0.8529308
+# 28 best
+# 57 diff
 cur_close <- post2015$close[1]
-post2015$predicted <- cur_close
+post2015$predicted3 <- cur_close
 for (i in c(1:(nrow(post2015)-1))) {
-  cur_close <- cur_close * (1 + (post2015$pred[i]-0.5)/62);
-  post2015$predicted[i+1] <- cur_close;
+  cur_close <- cur_close * (1 + (post2015$pred[i]-0.5)/28);
+  post2015$predicted3[i+1] <- cur_close;
 }
 
-sqrt(mean((log(post2015$predicted)-log(post2015$close))^2,na.rm=TRUE))
+cur_close <- post2015$close[1]
+post2015$predicted4 <- cur_close
+for (i in c(1:(nrow(post2015)-1))) {
+  cur_close <- cur_close * (1 + (post2015$pred[i]-0.5)/57);
+  post2015$predicted4[i+1] <- cur_close;
+}
+
+post2015$predicted <- (post2015$predicted1 +
+                         post2015$predicted2 +
+                         post2015$predicted3 +
+                         post2015$predicted4) / 4;
+
+sqrt(mean((log(post2015$predicted+1)-log(post2015$close+1))^2,na.rm=TRUE))
 
 
 ########################################################################
+
+#####
+post2015$predicted <- post2015$predicted4
+#####
 
 # ggplot
 gg_plot <- ggplot(data=post2015) + 
@@ -44,7 +84,34 @@ gg_plot <- ggplot(data=post2015) +
   scale_x_datetime(date_labels="%m-%d-%y", date_breaks = "3 months")
 
 # design
-gg_plot <- gg_plot + ggtitle("AMZN Stock Prediction 2016-17 k=54") +
+gg_plot <- gg_plot + ggtitle("AMZN Stock Prediction 2016-17") +
+  ylab("stock prices") +
+  theme(plot.title = element_text(hjust = 0.5, size = 15),
+        plot.background = element_rect(fill = "white"),
+        panel.background = element_rect(fill = "black"),
+        panel.grid.major = element_line(colour = "grey40"),
+        panel.grid.minor = element_line(colour = "grey50", linetype = "dotted"),
+        legend.position = "right",
+        legend.title = element_blank(),
+        legend.key = element_rect(fill = "black"))
+gg_plot
+
+#################################################################
+# ggplot
+gg_plot <- ggplot(data=AMZN) + 
+  geom_line(aes(date,open,color="open")) +
+  geom_line(aes(date,high,color="high")) +
+  geom_line(aes(date,low,color="low")) +
+  geom_line(aes(date,close,color="close")) +
+  scale_colour_manual(name="Line Color",
+                      values=c(open="green",
+                               high="darkorchid1",
+                               low="darkorchid4",
+                               close="red")) +
+  scale_x_datetime(date_labels="%Y", date_breaks = "1 year")
+
+# design
+gg_plot <- gg_plot + ggtitle("AMZN Stock 1997-2017") +
   ylab("stock prices") +
   theme(plot.title = element_text(hjust = 0.5, size = 15),
         plot.background = element_rect(fill = "white"),
@@ -59,4 +126,4 @@ gg_plot
 library(plotly)
 x <- ggplotly(gg_plot)
 x
-htmlwidgets::saveWidget(x, "AMZN plotly logit temp k54.html")
+htmlwidgets::saveWidget(x, "AMZN Ensembled.html")

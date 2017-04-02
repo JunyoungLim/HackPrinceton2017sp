@@ -64,6 +64,10 @@ sqrt(mean((log(post2015$predicted+1)-log(post2015$close+1))^2,na.rm=TRUE))
 
 ########################################################################
 
+#####
+post2015$predicted <- post2015$predicted4
+#####
+
 # ggplot
 gg_plot <- ggplot(data=post2015) + 
   geom_line(aes(date,open,color="open")) +
@@ -80,7 +84,7 @@ gg_plot <- ggplot(data=post2015) +
   scale_x_datetime(date_labels="%m-%d-%y", date_breaks = "3 months")
 
 # design
-gg_plot <- gg_plot + ggtitle("GOOGL Stock Prediction 2016-17") +
+gg_plot <- gg_plot + ggtitle("GOOGL Stock Prediction 2016-17 Logit K=59") +
   ylab("stock prices") +
   theme(plot.title = element_text(hjust = 0.5, size = 15),
         plot.background = element_rect(fill = "white"),
@@ -122,4 +126,4 @@ gg_plot
 library(plotly)
 x <- ggplotly(gg_plot)
 x
-htmlwidgets::saveWidget(x, "GOOGL plotly ensembled.html")
+htmlwidgets::saveWidget(x, "GOOGL prediction4.html")
