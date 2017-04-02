@@ -12,6 +12,13 @@ lm <- lm(delta ~ date + volume + open + close + high + low,
 pred <- predict(lm, newdata = post2015, type="response")
 post2015$pred <- pred
 
+cur_close <- post2015$close[1]
+post2015$predicted <- cur_close
+for (i in c(1:(nrow(post2015)-1))) {
+  cur_close <- cur_close + post2015$pred[i];
+  post2015$predicted[i+1] <- cur_close;
+}
+
 # logit
 logit <- glm(change ~ date + open + close,
              data = pre2015,
@@ -19,6 +26,7 @@ logit <- glm(change ~ date + open + close,
 
 pred <- predict(logit, newdata = post2015, type="response")
 post2015$pred <- pred
+
 
 # 63 for best 0.04566491
 # 55 for diff 0.9462311
@@ -50,7 +58,7 @@ gg_plot <- ggplot(data=post2015) +
   scale_x_datetime(date_labels="%m-%d-%y", date_breaks = "3 months")
 
 # design
-gg_plot <- gg + ggtitle("RB Stock Prediction 2016-17 k=54") +
+gg_plot <- gg_plot + ggtitle("FB Stock Prediction 2016-17 k=54") +
   ylab("stock prices") +
   theme(plot.title = element_text(hjust = 0.5, size = 15),
         plot.background = element_rect(fill = "white"),
@@ -65,4 +73,4 @@ gg_plot
 library(plotly)
 x <- ggplotly(gg_plot)
 x
-htmlwidgets::saveWidget(x, "RB plotly logit temp k54.html")
+htmlwidgets::saveWidget(x, "FB plotly logit temp k54.html")
