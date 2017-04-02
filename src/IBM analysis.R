@@ -3,7 +3,7 @@ IBM <- read.csv("IBM.csv")
 
 IBM$date <- as.POSIXct(strptime(IBM$date, '%Y-%m-%d',tz='GMT'))
 
-pre2015 <- subset(IBM, year <= 2015 && year > 1978)
+pre2015 <- subset(IBM, year <= 2015)
 post2015 <- subset(IBM, year > 2015)
 
 # linear
