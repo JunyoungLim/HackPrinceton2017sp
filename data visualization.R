@@ -14,7 +14,7 @@ sqrt(mean((log(pred)-log(post2015$close))^2,na.rm=TRUE))
 post2015$pred <- pred
 
 # ggplot
-google_plot <- ggplot(data=gglpost) + 
+google_plot <- ggplot(data=post2015) + 
                geom_line(aes(date,open,color="open")) +
                geom_line(aes(date,high,color="high")) +
                geom_line(aes(date,low,color="low")) +
