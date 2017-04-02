@@ -22,7 +22,7 @@ gglpost$pred <- pred
 cur_close <- gglpost$close[1]
 gglpost$predicted <- cur_close
 for (i in c(1:(nrow(gglpost)-1))) {
-  cur_close <- cur_close * (1 + (gglpost$pred[i]-0.5)/54);
+  cur_close <- cur_close * (1 + (gglpost$pred[i]-0.5)/112);
   gglpost$predicted[i+1] <- cur_close;
 }
 
