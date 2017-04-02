@@ -2,11 +2,11 @@
 
 members:
 
-Jared (Junyoung) Lim, Cornell University 2020, CS Major
+**Jared (Junyoung) Lim**, Cornell University 2020, CS Major
 
-Shubhom Bhattacharya, Cornell University 2020, ECE Major
+**Shubhom Bhattacharya**, Cornell University 2020, ECE Major
 
-Jia Wei, Cornell University 2020, CS Major
+**Jia Wei**, Cornell University 2020, CS Major
 
 ### Stock market analysis based on the predicive Regression Models and Ensembles
 
