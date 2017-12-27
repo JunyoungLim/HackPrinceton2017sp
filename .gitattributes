@@ -1,1 +1,5 @@
-webdev/graphics/*/*.html linguist-vendored
+webdev/graphics/AMZN/*.html linguist-vendored
+webdev/graphics/COF/*.html linguist-vendored
+webdev/graphics/GOOGL/*.html linguist-vendored
+webdev/graphics/HON/*.html linguist-vendored
+webdev/graphics/IBM/*.html linguist-vendored
