@@ -2,7 +2,7 @@
 
 members:
 
-**[Jared (Junyoung) Lim](https://github.com/JunyoungLim/)**, Cornell University 2020, CS Major
+**[Jared Junyoung Lim](https://github.com/JunyoungLim/)**, Cornell University 2020, CS Major
 
 **[Shubhom Bhattacharya](https://github.com/Shubhomb/)**, Cornell University 2020, ECE Major
 
