@@ -1,2 +1,1 @@
-webdev/graphics/*/*.html linguist-vendored
-webdev/*.html linguist-vendored
+*.html linguist-vendored
